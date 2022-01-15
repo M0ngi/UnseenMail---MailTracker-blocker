@@ -8,4 +8,4 @@ A simple extension that currently blocks the following list of trackers:
 I will work on making a more general solution for such a thing. Also I might work more on the UI to improve it.
 
 ## Download
-* [Version 1](https://github.com/M0ngi/UnseenMail-MailTracker-blocker/archive/refs/heads/main.zip)
+* [Version 1](https://github.com/M0ngi/UnseenMail-MailTracker-blocker/archive/refs/heads/main.zip) ([How to install?](https://youtu.be/CHhaKoPnB-c))
