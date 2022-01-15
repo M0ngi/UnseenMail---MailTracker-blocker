@@ -9,3 +9,9 @@ I will work on making a more general solution for such a thing. Also I might wor
 
 ## Download
 * [Version 1](https://github.com/M0ngi/UnseenMail-MailTracker-blocker/archive/refs/heads/main.zip) ([How to install?](https://youtu.be/CHhaKoPnB-c))
+
+## What's an email tracker?
+An email tracker is an extension that informs you whenever your email has been opened by the receiver.
+
+## What's an email tracker blocker?
+An email tracker blocker is an extension that blocks "Email Trackers", So if you open your email, the sender wouldn't get a notification of you opening it.
