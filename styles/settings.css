@@ -1,0 +1,67 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 100%;
+    margin-top: 8%;
+}
+
+.bottom{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+
+.col1{
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+}
+
+.col2{
+    width: 50%;
+    margin-left: 20%;
+
+}
+
+input{
+    width: 50%;
+    height: 100%;
+}
+
+.btnDiv{
+    width: 40%;
+    height: 90%;
+}
+
+.validBtn{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.1em solid rgba(141, 144, 148, 1);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:bold;
+    text-align:center;
+    color:rgb(227, 229, 233);
+    transition: all 0.2s;
+    height: 100%;
+    width: 100%;
+    font-family: "Comic Sans MS";
+    background-color: rgb(75, 76, 79);;
+}
+
+.clickable:hover{
+    border-color: rgba(255, 255, 255, 0.8);
+    color:rgba(255, 255, 255, 0.8);
+}

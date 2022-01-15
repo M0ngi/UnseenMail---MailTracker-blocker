@@ -1,0 +1,50 @@
+.col2{
+    width: 30%;
+}
+
+.btnRow{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 23.5%;
+    background-color: rgb(50, 50, 50); 
+    border-radius: 5px;
+}
+
+.row:hover{
+    background-color: rgba(138, 51, 225, 0.2);
+}
+
+.state{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.1em 0.1em 0;
+    border:0.1em solid rgba(141, 144, 148, 1);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:bold;
+    color:rgba(141, 144, 148, 1);
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    height: 55%;
+    width: 100%;
+    font-family: "Comic Sans MS";
+}
+
+#bCount{
+    width: 100%;
+    text-align: center;
+}
+
+.clickable:hover{
+    border-color: rgba(255, 255, 255, 0.8);
+    color:rgba(255, 255, 255, 0.8);
+}
