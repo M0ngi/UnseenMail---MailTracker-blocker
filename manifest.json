@@ -20,5 +20,8 @@
 		"default_icon": "img/icon.png",
 		"default_title": "Block mailtrackers!",
         "default_popup": "html/index.html"
-	}
+	},
+	
+	"author": "Mohamed Mongi Saidane - saidanemongi@gmail.com",
+	"homepage_url": "https://github.com/M0ngi/UnseenMail-MailTracker-blocker"
 }
