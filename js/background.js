@@ -1,16 +1,13 @@
 /*
     Copyright (C) 2022  Mohamed Mongi Saidane
-
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
     
@@ -19,24 +16,27 @@
 
 var state = true;
 var bCount = 0;
+var filter = {urls: ["https://*/*", "http://*/*"]};
 
 var settings = {
-    maxhist: 15,
-    blockedUrls : [
-        "https://my-email-signature.link/signature.gif",
-        "://mailtrack.io"
-    ]
+    maxhist: 15
 }
+
+var blockedUrls = [
+    "https://my-email-signature.link/signature.gif",
+    "://mailtrack.io",
+	new RegExp('signal[0-9]domain.online')
+]
 
 var callback = function(details) {
     if(!state) return;
-    if(details.initiator != "https://mail.google.com" || details.type != "image" || details.method != "GET") return;
-    
-    settings.blockedUrls.forEach(url => {
-        if(details.url.search(url) != -1){
+    if(details.type != "image") return;
+
+	for(let i=0; i<blockedUrls.length; i++){
+        if(decodeURIComponent(details.url).search(blockedUrls[i]) != -1){
             if(settings.maxhist == 0) return {cancel: true};
-            
-            bCount++;
+			console.log("BLOCKED");
+			bCount++;
             if(bCount >= settings.maxhist){
                 bCount = 0;
                 chrome.storage.local.set({'history': {count: 0}});
@@ -50,12 +50,11 @@ var callback = function(details) {
 
                 chrome.storage.local.set(result);
             });
+            
             return {cancel: true};
         }
-    });
+    }
 };
-
-var filter = {urls: ["https://*/*", "http://*/*"]};
 
 chrome.storage.local.set({'history': {count: 0}});
 
@@ -80,9 +79,9 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
     }
 });
 
-chrome.storage.sync.get(['settings'], function(res){
+chrome.storage.sync.get(['setting'], function(res){
     if(!res.settings){
-        chrome.storage.sync.set({'settings':settings});
+        chrome.storage.sync.set({'setting':settings});
     }
     else{
         settings = res.settings;
